@@ -1,0 +1,102 @@
+<template>
+  <main class="test-main relative">
+    <a-layout class="test-layout">
+      <a-row>
+        <a-col
+          :xs="{ span: 24 }"
+          :sm="{ span: 24 }"
+          :md="{ span: 14 }"
+          :lg="{ span: 14 }"
+          :xl="{ span: 14 }"
+          :xxl="{ span: 14 }"
+        >
+          <div class="test-logo">
+            <h1>{{ item.title }}</h1>
+            <img
+              :src="item.logo"
+              style="width: 100%; margin-bottom: 10px"
+              :alt="item.link"
+            />
+            <p>{{ item.description }}</p>
+            <div class="mt-2 input-button-wrap">
+              <div class="mb-2 name-input">
+                <a-input
+                  size="large"
+                  placeholder="이름 혹은 별칭을 입력해주세요."
+                  v-model:value="userName"
+                />
+              </div>
+              <AdsenseStart :slotId="item.adsenses.main" />
+              <div class="text-center pt-2">
+                <a :href="`/${item.category}/${item.link}/play`" target="_self">
+                  <a-button type="primary" class="btn-start" size="large">
+                    시작하기
+                  </a-button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </a-col>
+        <a-col
+          :xs="{ span: 24 }"
+          :sm="{ span: 24 }"
+          :md="{ span: 10 }"
+          :lg="{ span: 10 }"
+          :xl="{ span: 10 }"
+          :xxl="{ span: 10 }"
+        >
+          <Sidebar
+            :recentlyItems="recentlyItems"
+            :popularItems="popularItems"
+          />
+        </a-col>
+      </a-row>
+      <div class="mt-6">
+        <h2 class="px-2 text-xl font-bold">👉 다른 테스트 하러가기</h2>
+        <TestList :recentlyItems="recentlyItems" />
+      </div>
+    </a-layout>
+  </main>
+</template>
+
+<script setup>
+const route = useRoute();
+const runtimeConfig = useRuntimeConfig();
+
+const item = ref({});
+const recentlyItems = ref([]);
+const popularItems = ref([]);
+const userName = ref("");
+
+const category = computed(() => {
+  return route.params.category;
+});
+const link = computed(() => {
+  return route.params.link;
+});
+
+const url = `${runtimeConfig.BASE_URL}/mind/item.php?link=${link.value}`;
+const { data } = await useFetch(url, {
+  key: "item",
+  method: "get",
+});
+
+const d = JSON.parse(data._rawValue);
+item.value = d.item;
+recentlyItems.value = d.recentlyItems;
+popularItems.value = d.popularItems;
+
+// const url = `/api/mind/item?link=${link.value}`;
+// const { data } = await useFetch(url, {
+//   key: "item",
+//   method: "get",
+// });
+
+// item.value = data._rawValue.item;
+// recentlyItems.value = data._rawValue.recentlyItems;
+// popularItems.value = data._rawValue.popularItems;
+
+watch(userName, (newUserName) => {
+  localStorage.setItem("mindpang-name", newUserName);
+});
+</script>
