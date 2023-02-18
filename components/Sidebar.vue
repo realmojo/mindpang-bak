@@ -4,13 +4,11 @@
     <a-list item-layout="horizontal" :data-source="recentlyItems" bordered>
       <template #renderItem="{ item }">
         <a-list-item
-          ><NuxtLink :href="`/${item.category}/${item.link}`">
+          ><a :href="`/${item.category}/${item.link}`">
             <span className="category-sidebar-text">
               [{{ convertCategory(item.category) }}]
             </span>
-            <span className="category-sidebar-title">
-              {{ item.title }}</span
-            ></NuxtLink
+            <span className="category-sidebar-title"> {{ item.title }}</span></a
           ></a-list-item
         >
       </template>
@@ -20,13 +18,11 @@
     <a-list item-layout="horizontal" :data-source="popularItems" bordered>
       <template #renderItem="{ item }">
         <a-list-item
-          ><NuxtLink :href="`/${item.category}/${item.link}`">
+          ><a :href="`/${item.category}/${item.link}`">
             <span className="category-sidebar-text">
               [{{ convertCategory(item.category) }}]
             </span>
-            <span className="category-sidebar-title">
-              {{ item.title }}</span
-            ></NuxtLink
+            <span className="category-sidebar-title"> {{ item.title }}</span></a
           ></a-list-item
         >
       </template>
