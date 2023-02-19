@@ -36,7 +36,7 @@
     </div>
   </header>
 
-  <slot :items="items"></slot>
+  <slot></slot>
 </template>
 
 <script setup>
@@ -48,7 +48,6 @@ const category = computed(() => {
 });
 const isSearch = ref(false);
 const searchText = ref("");
-const items = ref([]);
 const menuItems = ref([
   {
     title: "전체",
@@ -94,8 +93,14 @@ const doSearch = () => {
   isSearch.value = !isSearch.value;
 };
 
-const doRandomStart = () => {
-  // const randomNumber = getRandomNumber(0, items.length - 1);
-  // location.href = `/${items[randomNumber].key}/${items[randomNumber].link}`;
+const doRandomStart = async () => {
+  const url = `${runtimeConfig.BASE_URL}/mind/all.php`;
+  const { data } = await useFetch(url, {
+    key: "all",
+    method: "get",
+  });
+  const d = JSON.parse(data._rawValue).items;
+  const randomNumber = getRandomNumber(0, d.length - 1);
+  location.href = `/${d[randomNumber].category}/${d[randomNumber].link}`;
 };
 </script>

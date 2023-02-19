@@ -90,4 +90,68 @@ const doNext = () => {
 watch(testAnswer.value, (newTestAnswer) => {
   localStorage.setItem("mindpang-answer", JSON.stringify(newTestAnswer));
 });
+
+useHead({
+  title: `${d.title} - 마인드팡`,
+  link: [
+    {
+      rel: "canonical",
+      href: `https://mindpang.com/${d.category}/${d.link}/play`,
+    },
+  ],
+  meta: [
+    {
+      name: "description",
+      content: d.description,
+    },
+    {
+      name: "og:type",
+      content: "website",
+    },
+    {
+      name: "og:url",
+      content: `https://mindpang.com/${d.category}/${d.link}/play`,
+    },
+    {
+      name: "og:article:author",
+      content: "Mindpang",
+    },
+    {
+      name: "og:site_name",
+      content: "마인드팡",
+    },
+    {
+      name: "og:title",
+      content: d.title,
+    },
+    {
+      name: "og:image",
+      content: d.logo,
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      name: "twitter:site",
+      content: "@mindpang.com",
+    },
+    {
+      name: "twitter:title",
+      content: d.title,
+    },
+    {
+      name: "twitter:description",
+      content: d.description,
+    },
+    {
+      name: "twitter:image",
+      content: d.logo,
+    },
+    {
+      name: "apple-touch-icon",
+      content: d.logo,
+    },
+  ],
+});
 </script>

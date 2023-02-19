@@ -49,8 +49,25 @@ const recentlyItems = ref([]);
 const popularItems = ref([]);
 const page = ref(1);
 
+const categoryArr = {
+  life: "라이프",
+  love: "사랑",
+  health: "건강",
+  money: "돈",
+  entertain: "연예",
+};
+
 const category = computed(() => {
   return route.params.category ? route.params.category : "all";
+});
+useHead({
+  title: `${categoryArr[category.value]} - 재미있는 무료 테스트 모음`,
+  link: [
+    {
+      rel: "canonical",
+      href: `https://mindpang.com/${category.value}`,
+    },
+  ],
 });
 
 const url = `${runtimeConfig.BASE_URL}/mind/main.php?category=${category.value}`;
@@ -65,12 +82,19 @@ recentlyItems.value = d.recentlyItems;
 popularItems.value = d.popularItems;
 
 const doMoreItem = async () => {
-  const url = `/api/mind/list?category=${category.value}&page=${page.value}`;
+  const url = `${runtimeConfig.BASE_URL}/mind/list.php?category=${category.value}&page=${page.value}`;
   const { data } = await useFetch(url, {
     key: "moreList",
     method: "get",
   });
-  const moreItems = data._rawValue.data;
+  const d = JSON.parse(data._rawValue);
+  const moreItems = d;
+  // const url = `/api/mind/list?category=${category.value}&page=${page.value}`;
+  // const { data } = await useFetch(url, {
+  //   key: "moreList",
+  //   method: "get",
+  // });
+  // const moreItems = data._rawValue.data;
   if (moreItems.length) {
     page.value += 1;
     items.value = items.value.concat(moreItems);

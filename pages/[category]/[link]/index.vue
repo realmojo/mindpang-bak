@@ -99,4 +99,67 @@ popularItems.value = d.popularItems;
 watch(userName, (newUserName) => {
   localStorage.setItem("mindpang-name", newUserName);
 });
+useHead({
+  title: `${d.item.title} - 마인드팡`,
+  link: [
+    {
+      rel: "canonical",
+      href: `https://mindpang.com/${d.item.category}/${d.item.link}`,
+    },
+  ],
+  meta: [
+    {
+      name: "description",
+      content: d.item.description,
+    },
+    {
+      name: "og:type",
+      content: "website",
+    },
+    {
+      name: "og:url",
+      content: `https://mindpang.com/${d.item.category}/${d.item.link}`,
+    },
+    {
+      name: "og:article:author",
+      content: "Mindpang",
+    },
+    {
+      name: "og:site_name",
+      content: "마인드팡",
+    },
+    {
+      name: "og:title",
+      content: d.item.title,
+    },
+    {
+      name: "og:image",
+      content: d.item.logo,
+    },
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      name: "twitter:site",
+      content: "@mindpang.com",
+    },
+    {
+      name: "twitter:title",
+      content: d.item.title,
+    },
+    {
+      name: "twitter:description",
+      content: d.item.description,
+    },
+    {
+      name: "twitter:image",
+      content: d.item.logo,
+    },
+    {
+      name: "apple-touch-icon",
+      content: d.item.logo,
+    },
+  ],
+});
 </script>

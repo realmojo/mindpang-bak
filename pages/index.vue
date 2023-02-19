@@ -81,12 +81,14 @@ popularItems.value = d.popularItems;
 // popularItems.value = data._rawValue.popularItems;
 
 const doMoreItem = async () => {
-  const url = `/api/mind/list?page=${page.value}`;
+  // const url = `/api/mind/list?page=${page.value}`;
+  const url = `${runtimeConfig.BASE_URL}/mind/list.php?page=${page.value}`;
   const { data } = await useFetch(url, {
     key: "moreList",
     method: "get",
   });
-  const moreItems = data._rawValue.data;
+  const d = JSON.parse(data._rawValue);
+  const moreItems = d;
   if (moreItems.length) {
     page.value += 1;
     items.value = items.value.concat(moreItems);

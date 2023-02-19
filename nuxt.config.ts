@@ -29,10 +29,35 @@ export default defineNuxtConfig({
   plugins: ["@/plugins/antd"],
   app: {
     head: {
+      htmlAttrs: { lang: "ko" },
       title: title,
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
+      script: [
+        // {
+        //   src: "https://t1.kakaocdn.net/kakao_js_sdk/v1/kakao.min.js",
+        // },
+        // {
+        //   src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130836798889522",
+        //   crossorigin: "anonymous",
+        //   async: true,
+        // },
+        // {
+        //   src: "//wcs.naver.net/wcslog.js",
+        //   type: "text/javascript",
+        // },
+      ],
+      link: [
+        {
+          rel: "canonical",
+          href: "https://mindpang.com",
+        },
+      ],
       meta: [
+        {
+          name: "robots",
+          content: "index, follow",
+        },
         {
           name: "theme-color",
           content: "#E5BA73",
