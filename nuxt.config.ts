@@ -11,12 +11,12 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxtjs/tailwindcss",
-    // [
-    //   "@nuxtjs/google-adsense",
-    //   {
-    //     id: "ca-pub-9130836798889522",
-    //   },
-    // ],
+    [
+      "@nuxtjs/google-adsense",
+      {
+        id: "ca-pub-9130836798889522",
+      },
+    ],
   ],
   css: ["~/assets/css/style.css"],
   tailwindcss: {
