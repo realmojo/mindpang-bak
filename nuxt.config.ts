@@ -29,8 +29,8 @@ export default defineNuxtConfig({
   plugins: [
     "@/plugins/antd",
     "@/plugins/gtag",
-    { src: "@/plugins/naver-analytics.js", mode: "client", ssr: false },
-    { src: "@/plugins/bing-clarity.js", mode: "client", ssr: false },
+    // { src: "@/plugins/naver-analytics.js", mode: "client", ssr: false },
+    // { src: "@/plugins/bing-clarity.js", mode: "client", ssr: false },
   ],
   app: {
     head: {
