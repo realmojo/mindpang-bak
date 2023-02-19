@@ -32,7 +32,7 @@
         </div>
         <Share :item="item" :total="total" />
         <h2 class="px-2 text-xl font-bold">👉 다른 테스트 하러가기</h2>
-        <AdsenseComplete :slotId="item.adsenses?.result" />
+        <AdsenseComplete :slotId="item.adsenses.result" />
       </div>
       <TestList :recentlyItems="recentlyItems" />
     </a-layout>

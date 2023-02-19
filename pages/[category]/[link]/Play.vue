@@ -36,6 +36,8 @@
         </a-radio-group>
       </div>
 
+      <AdsensePlay :slotId="item.adsenses.play" />
+
       <div class="my-3">
         <div class="text-center mt-4">
           <a-button

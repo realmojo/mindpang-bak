@@ -11,7 +11,7 @@
       :xxl="{ span: 8 }"
       class="pb-6"
     >
-      <NuxtLink :href="`/${item.category}/${item.link}`">
+      <a :href="`/${item.category}/${item.link}`" target="_self">
         <a-card size="small" hoverable>
           <div class="ant-card-cover">
             <img :src="item.logo" :alt="item.link" />
@@ -25,7 +25,7 @@
             </div>
           </div>
         </a-card>
-      </NuxtLink>
+      </a>
     </a-col>
   </a-row>
 </template>
