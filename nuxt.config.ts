@@ -11,12 +11,12 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxtjs/tailwindcss",
-    // [
-    //   "@nuxtjs/google-adsense",
-    //   {
-    //     id: "ca-pub-9130836798889522",
-    //   },
-    // ],
+    [
+      "@nuxtjs/google-adsense",
+      {
+        id: "ca-pub-9130836798889522",
+      },
+    ],
   ],
   css: ["~/assets/css/style.css"],
   tailwindcss: {
@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     injectPosition: 0,
     viewer: true,
   },
-  plugins: ["@/plugins/antd"],
+  plugins: ["@/plugins/antd", "@/plugins/gtag"],
   app: {
     head: {
       htmlAttrs: { lang: "ko" },
