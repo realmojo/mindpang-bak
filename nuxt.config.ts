@@ -11,12 +11,12 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxtjs/tailwindcss",
-    [
-      "@nuxtjs/google-adsense",
-      {
-        id: "ca-pub-9130836798889522",
-      },
-    ],
+    // [
+    //   "@nuxtjs/google-adsense",
+    //   {
+    //     id: "ca-pub-9130836798889522",
+    //   },
+    // ],
   ],
   css: ["~/assets/css/style.css"],
   tailwindcss: {
@@ -42,11 +42,11 @@ export default defineNuxtConfig({
         {
           src: "https://t1.kakaocdn.net/kakao_js_sdk/v1/kakao.min.js",
         },
-        // {
-        //   src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130836798889522",
-        //   crossorigin: "anonymous",
-        //   async: true,
-        // },
+        {
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130836798889522",
+          crossorigin: "anonymous",
+          async: true,
+        },
         {
           src: "//wcs.naver.net/wcslog.js",
           type: "text/javascript",
