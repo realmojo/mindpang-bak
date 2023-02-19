@@ -1,4 +1,4 @@
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   (function (c, l, a, r, i, t, y) {
     c[a] =
       c[a] ||
