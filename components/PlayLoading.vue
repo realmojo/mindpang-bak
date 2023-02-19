@@ -7,11 +7,10 @@
     <div v-if="isLoading" class="text-center pt-4 mb-2">
       <a-spin size="large" />
     </div>
-    <div v-else>
-      <div class="text-center flex flex-col justify-center px-4 mt-4">
-        <AdsenseLoading :slotId="slotId" />
-      </div>
-
+    <div class="text-center flex flex-col justify-center px-4 mt-4">
+      <AdsenseLoading :slotId="slotId" />
+    </div>
+    <div v-if="!isLoading">
       <NuxtLink :to="`/${item.category}/${item.link}/result`">
         <a-button
           class="btn-mindpang"
