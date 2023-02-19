@@ -31,7 +31,7 @@
       </a>
     </div>
     <div class="footer-info">
-      @Copyright 2023. 마인드팡. All rights reserved
+      @Copyright 2023. 마인드팡. All rights reserved.
     </div>
   </footer>
 </template>
