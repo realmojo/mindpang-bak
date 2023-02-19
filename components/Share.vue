@@ -22,7 +22,7 @@
     </div>
     <div
       class="facebook-share-button pt-1 inline"
-      @click="shareFacebook"
+      @click="shareFacebook(item.category, item.link, item.title)"
       style="cursor: pointer"
     >
       <img
@@ -47,7 +47,7 @@
     </div>
     <div
       class="link-share-button inline pt-2"
-      @click="copy"
+      @click="copy(item.category, item.link)"
       style="cursor: pointer"
     >
       <img
@@ -73,12 +73,13 @@ const { item, total } = defineProps({
   item: Object,
   total: Number,
 });
+console.log(item);
 
-const shareFacebook = () => {
+const shareFacebook = (category, link, title) => {
   window.open(
-    `https://www.facebook.com/sharer/sharer.php?u=https://mindpang.com/${
-      item.category
-    }/${encodeURIComponent(item.link)}&t=${item.title}`,
+    `https://www.facebook.com/sharer/sharer.php?u=https://mindpang.com/${category}/${encodeURIComponent(
+      link
+    )}&t=${title}`,
     "_blank",
     "width=600, height: 400"
   );
@@ -87,10 +88,10 @@ const shareFacebook = () => {
 const success = () => {
   message.success("URL이 복사되었습니다.");
 };
-const copy = () => {
+const copy = (category, link) => {
   success();
   var textarea = document.createElement("textarea");
-  textarea.value = `https://mindpang.com/${item.category}/${item.link}`;
+  textarea.value = `https://mindpang.com/${category}/${link}`;
 
   document.body.appendChild(textarea);
   textarea.select();
