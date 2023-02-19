@@ -37,6 +37,7 @@
   </header>
 
   <slot></slot>
+  <Footer />
 </template>
 
 <script setup>

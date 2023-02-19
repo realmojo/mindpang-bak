@@ -39,7 +39,6 @@
       </a-row>
     </a-layout>
   </main>
-  <Footer />
 </template>
 
 <script setup>
