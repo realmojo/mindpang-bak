@@ -11,12 +11,12 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxtjs/tailwindcss",
-    [
-      "@nuxtjs/google-adsense",
-      {
-        id: "ca-pub-9130836798889522",
-      },
-    ],
+    // [
+    //   "@nuxtjs/google-adsense",
+    //   {
+    //     id: "ca-pub-9130836798889522",
+    //   },
+    // ],
   ],
   css: ["~/assets/css/style.css"],
   tailwindcss: {
@@ -26,7 +26,12 @@ export default defineNuxtConfig({
     injectPosition: 0,
     viewer: true,
   },
-  plugins: ["@/plugins/antd", "@/plugins/gtag"],
+  plugins: [
+    "@/plugins/antd",
+    "@/plugins/gtag",
+    { src: "@/plugins/naver-analytics.js", mode: "client", ssr: false },
+    { src: "@/plugins/bing-clarity.js", mode: "client", ssr: false },
+  ],
   app: {
     head: {
       htmlAttrs: { lang: "ko" },
@@ -34,18 +39,18 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       script: [
-        // {
-        //   src: "https://t1.kakaocdn.net/kakao_js_sdk/v1/kakao.min.js",
-        // },
+        {
+          src: "https://t1.kakaocdn.net/kakao_js_sdk/v1/kakao.min.js",
+        },
         // {
         //   src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130836798889522",
         //   crossorigin: "anonymous",
         //   async: true,
         // },
-        // {
-        //   src: "//wcs.naver.net/wcslog.js",
-        //   type: "text/javascript",
-        // },
+        {
+          src: "//wcs.naver.net/wcslog.js",
+          type: "text/javascript",
+        },
       ],
       link: [
         {
