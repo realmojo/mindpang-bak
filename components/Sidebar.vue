@@ -1,6 +1,6 @@
 <template>
-  <div className="mt-4 px-2">
-    <a-divider orientation="left">최신 테스트</a-divider>
+  <div className="mt-4 mb-2 px-2">
+    <a-divider orientation="left"><strong>최신 테스트</strong></a-divider>
     <a-list item-layout="horizontal" :data-source="recentlyItems" bordered>
       <template #renderItem="{ item }">
         <a-list-item
@@ -8,13 +8,17 @@
             <span className="category-sidebar-text">
               [{{ convertCategory(item.category) }}]
             </span>
-            <span className="category-sidebar-title"> {{ item.title }}</span></a
+            <span className="category-sidebar-title">
+              {{ item.title }}
+            </span></a
           ></a-list-item
         >
       </template>
     </a-list>
     <div className="mt-8"></div>
-    <a-divider orientation="left">가장 인기있는 테스트</a-divider>
+    <a-divider orientation="left"
+      ><strong>가장 인기있는 테스트</strong></a-divider
+    >
     <a-list item-layout="horizontal" :data-source="popularItems" bordered>
       <template #renderItem="{ item }">
         <a-list-item

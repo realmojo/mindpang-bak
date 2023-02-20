@@ -9,15 +9,7 @@ export default defineNuxtConfig({
       BASE_URL: "https://f5game.co.kr/api",
     },
   },
-  modules: [
-    "@nuxtjs/tailwindcss",
-    // [
-    //   "@nuxtjs/google-adsense",
-    //   {
-    //     id: "ca-pub-9130836798889522",
-    //   },
-    // ],
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/image"],
   css: ["~/assets/css/style.css"],
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.css",
@@ -26,12 +18,7 @@ export default defineNuxtConfig({
     injectPosition: 0,
     viewer: true,
   },
-  plugins: [
-    "@/plugins/antd",
-    "@/plugins/gtag",
-    // { src: "@/plugins/naver-analytics.js", mode: "client", ssr: false },
-    // { src: "@/plugins/bing-clarity.js", mode: "client", ssr: false },
-  ],
+  plugins: ["@/plugins/antd", "@/plugins/gtag"],
   app: {
     head: {
       htmlAttrs: { lang: "ko" },
@@ -42,11 +29,11 @@ export default defineNuxtConfig({
         {
           src: "https://t1.kakaocdn.net/kakao_js_sdk/v1/kakao.min.js",
         },
-        {
-          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130836798889522",
-          crossorigin: "anonymous",
-          async: true,
-        },
+        // {
+        //   src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9130836798889522",
+        //   crossorigin: "anonymous",
+        //   async: true,
+        // },
         {
           src: "//wcs.naver.net/wcslog.js",
           type: "text/javascript",

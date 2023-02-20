@@ -5,9 +5,9 @@
     :xs="{ span: 24 }"
     :sm="{ span: 24 }"
     :md="{ span: 12 }"
-    :lg="{ span: 8 }"
-    :xl="{ span: 8 }"
-    :xxl="{ span: 8 }"
+    :lg="{ span: 12 }"
+    :xl="{ span: 12 }"
+    :xxl="{ span: 12 }"
     class="pb-2"
   >
     <a :href="`/${item.category}/${item.link}`" target="_self">

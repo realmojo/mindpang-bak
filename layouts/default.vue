@@ -7,8 +7,12 @@
         class="logo-image"
         alt="테스트팡-로고"
       />
-      <a-button @click="doRandomStart">랜덤 테스트</a-button>
-      <a-button @click="doSearch">검색</a-button>
+      <a-button @click="doRandomStart">
+        <template #icon><CaretRightOutlined /></template
+      ></a-button>
+      <a-button @click="doSearch">
+        <template #icon><SearchOutlined /></template>
+      </a-button>
     </div>
     <div v-if="isSearch" class="search-layout">
       <a-input-search
@@ -41,6 +45,8 @@
 </template>
 
 <script setup>
+import { SearchOutlined, CaretRightOutlined } from "@ant-design/icons-vue";
+
 const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
 
