@@ -185,15 +185,13 @@ header > .mindpang-menu-wrap > .mindpang-menu {
   background: transparent;
 }
 .test-layout {
-  width: 900px;
+  width: 500px;
+  padding: 10px;
   margin: 0 auto;
 }
 .play-layout {
   padding-top: 0px !important;
   width: 400px;
-}
-.test-logo {
-  margin-top: 40px;
 }
 .test-logo > h1 {
   text-align: center;
@@ -250,7 +248,6 @@ header > .mindpang-menu-wrap > .mindpang-menu {
   width: 100%;
 }
 .test-result-text {
-  padding: 10px;
   font-size: 18px;
   line-height: 1.63;
 }
@@ -300,17 +297,11 @@ header > .mindpang-menu-wrap > .mindpang-menu {
   .test-logo {
     margin-top: 0px;
   }
-  .test-logo > h1 {
-    padding-top: 20px;
-  }
   .test-layout {
     width: 100%;
   }
   .test-play-img {
     padding-top: 0;
-  }
-  .test-logo > p {
-    padding: 0 10px;
   }
   .search-layout {
     width: 100% !important;
@@ -318,9 +309,6 @@ header > .mindpang-menu-wrap > .mindpang-menu {
   .ant-row {
     margin-left: 0 !important;
     margin-right: 0 !important;
-  }
-  .input-button-wrap {
-    padding: 10px;
   }
   header > .mindpang-menu-wrap {
     overflow-x: auto;

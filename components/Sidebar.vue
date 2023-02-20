@@ -1,5 +1,5 @@
 <template>
-  <div className="mt-4 mb-2 px-2">
+  <div className="mt-4 mb-2">
     <a-divider orientation="left"><strong>최신 테스트</strong></a-divider>
     <a-list item-layout="horizontal" :data-source="recentlyItems" bordered>
       <template #renderItem="{ item }">

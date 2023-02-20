@@ -1,6 +1,6 @@
 <template>
   <div class="pt-4">
-    <h2 class="px-2 text-xl font-bold">👉 테스트 공유하기</h2>
+    <h2 class="text-xl font-bold">👉 테스트 공유하기</h2>
   </div>
   <div class="flex justify-center px-4 pt-4 pb-4">
     <div class="twitter-share-button inline" style="cursor: pointer">
@@ -57,7 +57,7 @@
       />
     </div>
   </div>
-  <div class="px-4 mb-4">
+  <div class="mb-4">
     <a href="https://pf.kakao.com/_lxdYWxj">
       <a-button class="btn-kakao-plus" size="large">
         카카오톡 플친 추가

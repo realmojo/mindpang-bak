@@ -1,14 +1,14 @@
 <template>
-  <a-row :gutter="8" class="mt-4 px-2">
+  <a-row :gutter="8" class="mt-4">
     <a-col
       v-for="(item, index) in recentlyItems"
       :key="index"
       :xs="{ span: 24 }"
       :sm="{ span: 24 }"
       :md="{ span: 12 }"
-      :lg="{ span: 8 }"
-      :xl="{ span: 8 }"
-      :xxl="{ span: 8 }"
+      :lg="{ span: 12 }"
+      :xl="{ span: 12 }"
+      :xxl="{ span: 12 }"
       class="pb-6"
     >
       <a :href="`/${item.category}/${item.link}`" target="_self">

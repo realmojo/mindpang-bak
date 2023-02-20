@@ -5,10 +5,10 @@
         <a-col
           :xs="{ span: 24 }"
           :sm="{ span: 24 }"
-          :md="{ span: 14 }"
-          :lg="{ span: 14 }"
-          :xl="{ span: 14 }"
-          :xxl="{ span: 14 }"
+          :md="{ span: 24 }"
+          :lg="{ span: 24 }"
+          :xl="{ span: 24 }"
+          :xxl="{ span: 24 }"
         >
           <div class="test-logo">
             <h1>{{ item.title }}</h1>
@@ -40,10 +40,10 @@
         <a-col
           :xs="{ span: 24 }"
           :sm="{ span: 24 }"
-          :md="{ span: 10 }"
-          :lg="{ span: 10 }"
-          :xl="{ span: 10 }"
-          :xxl="{ span: 10 }"
+          :md="{ span: 24 }"
+          :lg="{ span: 24 }"
+          :xl="{ span: 24 }"
+          :xxl="{ span: 24 }"
         >
           <Sidebar
             :recentlyItems="recentlyItems"
@@ -52,7 +52,7 @@
         </a-col>
       </a-row>
       <div class="mt-6">
-        <h2 class="px-2 text-xl font-bold">👉 다른 테스트 하러가기</h2>
+        <h2 class="text-xl font-bold">👉 다른 테스트 하러가기</h2>
         <TestList :recentlyItems="recentlyItems" />
       </div>
     </a-layout>
