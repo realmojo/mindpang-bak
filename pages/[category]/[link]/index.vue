@@ -12,7 +12,7 @@
         >
           <div class="test-logo">
             <h1>{{ item.title }}</h1>
-            <img
+            <nuxt-img
               :src="item.logo"
               style="width: 100%; margin-bottom: 10px"
               :alt="item.link"

@@ -32,7 +32,7 @@
       />
     </div>
     <div class="kakao-share-button inline" style="cursor: pointer">
-      <button id="kakao-link-btn">
+      <button id="kakao-link-btn" @click="createKakaoButton(item)">
         <nuxt-img
           src="https://f5game.s3.ap-northeast-2.amazonaws.com/kakao.png"
           alt="kakao-share-icon"
@@ -73,7 +73,6 @@ const { item, total } = defineProps({
   item: Object,
   total: Number,
 });
-console.log(item);
 
 const shareFacebook = (category, link, title) => {
   window.open(
@@ -99,5 +98,42 @@ const copy = (category, link) => {
 
   document.execCommand("copy");
   document.body.removeChild(textarea);
+};
+
+const createKakaoButton = (item) => {
+  // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근이 가능합니다
+  console.log(window.Kakao, item);
+  if (window.Kakao) {
+    const kakao = window.Kakao;
+    // 중복 initialization 방지
+    if (!kakao.isInitialized()) {
+      // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
+      kakao.init("4620ebc4c39b8b6bb94e0e471b33de8c");
+    }
+    // kakao.Link.createDefaultButton({
+    kakao.Share.sendDefault({
+      // Render 부분 id=kakao-link-btn 을 찾아 그부분에 렌더링을 합니다
+      // container: "#kakao-link-btn",
+      objectType: "feed",
+      content: {
+        title: item.title,
+        description: item.description,
+        imageUrl: item.logo,
+        link: {
+          mobileWebUrl: `https://mindpang.com/${item.category}/${item.link}`,
+          webUrl: `https://mindpang.com/${item.category}/${item.link}`,
+        },
+      },
+      buttons: [
+        {
+          title: "플레이 하기",
+          link: {
+            mobileWebUrl: `https://mindpang.com/${item.category}/${item.link}`,
+            webUrl: `https://mindpang.com/${item.category}/${item.link}`,
+          },
+        },
+      ],
+    });
+  }
 };
 </script>
