@@ -5,6 +5,6 @@
 </template>
 <script setup>
 onMounted(() => {
-  console.log("Mindpang version: 1.0.3");
+  console.log("Mindpang version: 1.0.4");
 });
 </script>
