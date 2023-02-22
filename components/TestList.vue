@@ -9,12 +9,12 @@
       :lg="{ span: 12 }"
       :xl="{ span: 12 }"
       :xxl="{ span: 12 }"
-      class="pb-6"
+      class="pb-2"
     >
       <a :href="`/${item.category}/${item.link}`" target="_self">
         <a-card size="small" hoverable>
           <div class="ant-card-cover">
-            <img :src="item.logo" :alt="item.link" />
+            <nuxt-img :src="item.logo" :alt="item.link" />
           </div>
 
           <div class="ant-card-meta">

@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       BASE_URL: "https://f5game.co.kr/api",
     },
   },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/image-edge"],
   css: ["~/assets/css/style.css"],
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.css",

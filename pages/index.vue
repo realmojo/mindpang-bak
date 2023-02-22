@@ -1,6 +1,6 @@
 <template>
   <main>
-    <a-layout class="site-layout">
+    <a-layout class="site-layout px-2">
       <a-row>
         <a-col
           :xs="{ span: 24 }"
@@ -11,13 +11,13 @@
           :xxl="{ span: 24 }"
         >
           <a-row
-            class="pt-2 pb-4 px-2"
+            class="pt-2 pb-4"
             :gutter="8"
             style="margin-left: 0, margin-right: 0"
           >
             <Items :items="items" />
           </a-row>
-          <div class="text-center px-2 mb-4">
+          <div class="text-center mb-4">
             <a-button class="btn-mindpang" size="large" @click="doMoreItem">
               더보기
             </a-button>

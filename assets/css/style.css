@@ -138,9 +138,19 @@ header > .mindpang-menu-wrap > .mindpang-menu {
 .ant-input:focus {
   border-color: #e5ba73 !important;
 }
+footer {
+  width: 500px;
+  margin: 0 auto;
+}
 
 @media (max-width: 899px) {
   .site-layout {
+    width: 100%;
+  }
+  header {
+    width: 100%;
+  }
+  footer {
     width: 100%;
   }
 }
@@ -323,8 +333,10 @@ header > .mindpang-menu-wrap > .mindpang-menu {
   .play-layout {
     width: 100%;
   }
+  footer {
+    width: 100%;
+  }
 }
-
 .footer-info.first {
   padding-top: 20px;
 }

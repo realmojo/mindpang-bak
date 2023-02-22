@@ -2,7 +2,7 @@
   <header>
     <div class="header-wrap">
       <a href="/" target="_self">마인드팡</a>
-      <img
+      <nuxt-img
         src="https://f5game.s3.ap-northeast-2.amazonaws.com/testpang-logo.png"
         class="logo-image"
         alt="테스트팡-로고"

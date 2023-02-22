@@ -5,7 +5,7 @@
         <h1 class="pt-4 pb-4 text-2xl font-bold text-center result-title">
           {{ userName }}님 결과분석
         </h1>
-        <img
+        <nuxt-img
           v-if="resultItem.url"
           class="test-play-img"
           :src="resultItem.url"

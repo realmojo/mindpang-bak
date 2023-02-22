@@ -1,17 +1,17 @@
 <template>
   <main>
-    <a-layout class="site-layout">
+    <a-layout class="site-layout px-2">
       <a-row>
         <a-col
           :xs="{ span: 24 }"
           :sm="{ span: 24 }"
-          :md="{ span: 18 }"
-          :lg="{ span: 18 }"
-          :xl="{ span: 18 }"
-          :xxl="{ span: 18 }"
+          :md="{ span: 24 }"
+          :lg="{ span: 24 }"
+          :xl="{ span: 24 }"
+          :xxl="{ span: 24 }"
         >
           <a-row
-            class="pt-4 pb-4 px-2"
+            class="pt-2 pb-4"
             :gutter="8"
             style="margin-left: 0, margin-right: 0"
           >
@@ -26,10 +26,10 @@
         <a-col
           :xs="{ span: 24 }"
           :sm="{ span: 24 }"
-          :md="{ span: 6 }"
-          :lg="{ span: 6 }"
-          :xl="{ span: 6 }"
-          :xxl="{ span: 6 }"
+          :md="{ span: 24 }"
+          :lg="{ span: 24 }"
+          :xl="{ span: 24 }"
+          :xxl="{ span: 24 }"
         >
           <Sidebar
             :recentlyItems="recentlyItems"

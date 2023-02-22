@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLoading">
+  <div v-if="isLoading" class="site-layout px-2">
     <PlayLoading
       :item="item"
       :testAnswer="testAnswer"
@@ -17,7 +17,7 @@
           {{ index + 1 }}. {{ content.title.text }}
         </h1>
         <div v-if="content && content.title.url" class="mb-2">
-          <img
+          <nuxt-img
             class="test-play-img"
             :src="content.title.url"
             :alt="content.title.text"

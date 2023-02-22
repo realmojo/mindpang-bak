@@ -13,7 +13,7 @@
         target="_blank"
         rel="noreferrer"
       >
-        <img
+        <nuxt-img
           src="https://f5game.s3.ap-northeast-2.amazonaws.com/twitter.png"
           alt="twitter-share-icon"
           style="width: 90px"
@@ -25,7 +25,7 @@
       @click="shareFacebook(item.category, item.link, item.title)"
       style="cursor: pointer"
     >
-      <img
+      <nuxt-img
         src="https://f5game.s3.ap-northeast-2.amazonaws.com/facebook.png"
         alt="facebook-share-icon"
         style="width: 80px"
@@ -33,7 +33,7 @@
     </div>
     <div class="kakao-share-button inline" style="cursor: pointer">
       <button id="kakao-link-btn">
-        <img
+        <nuxt-img
           src="https://f5game.s3.ap-northeast-2.amazonaws.com/kakao.png"
           alt="kakao-share-icon"
           style="
@@ -50,7 +50,7 @@
       @click="copy(item.category, item.link)"
       style="cursor: pointer"
     >
-      <img
+      <nuxt-img
         src="https://f5game.s3.ap-northeast-2.amazonaws.com/link.png"
         alt="link-share-icon"
         style="width: 70px"
