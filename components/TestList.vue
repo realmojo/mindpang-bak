@@ -14,7 +14,7 @@
       <a :href="`/${item.category}/${item.link}`" target="_self">
         <a-card size="small" hoverable>
           <div class="ant-card-cover">
-            <nuxt-img :src="item.logo" :alt="item.link" />
+            <nuxt-img :src="item.logo" :alt="item.link" loading="lazy" />
           </div>
 
           <div class="ant-card-meta">

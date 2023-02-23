@@ -17,6 +17,7 @@
           src="https://f5game.s3.ap-northeast-2.amazonaws.com/twitter.png"
           alt="twitter-share-icon"
           style="width: 90px"
+          loading="lazy"
         />
       </a>
     </div>
@@ -29,6 +30,7 @@
         src="https://f5game.s3.ap-northeast-2.amazonaws.com/facebook.png"
         alt="facebook-share-icon"
         style="width: 80px"
+        loading="lazy"
       />
     </div>
     <div class="kakao-share-button inline" style="cursor: pointer">
@@ -42,6 +44,7 @@
             margin-left: 10px;
             margin-right: 10px;
           "
+          loading="lazy"
         />
       </button>
     </div>
@@ -54,6 +57,7 @@
         src="https://f5game.s3.ap-northeast-2.amazonaws.com/link.png"
         alt="link-share-icon"
         style="width: 70px"
+        loading="lazy"
       />
     </div>
   </div>

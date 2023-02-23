@@ -21,6 +21,7 @@
             class="test-play-img"
             :src="content.title.url"
             :alt="content.title.text"
+            loading="lazy"
           />
         </div>
         <a-radio-group class="mt-2" v-model:value="testAnswer[index]">

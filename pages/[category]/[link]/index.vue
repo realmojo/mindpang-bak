@@ -16,6 +16,7 @@
               :src="item.logo"
               style="width: 100%; margin-bottom: 10px"
               :alt="item.link"
+              loading="lazy"
             />
             <p>{{ item.description }}</p>
             <div class="mt-2 input-button-wrap">

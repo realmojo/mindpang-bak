@@ -10,6 +10,7 @@
           class="test-play-img"
           :src="resultItem.url"
           alt="logo"
+          loading="lazy"
         />
         <div v-if="item.type === 'answer'" class="pt-4 text-2xl result-title">
           테스트 점수
