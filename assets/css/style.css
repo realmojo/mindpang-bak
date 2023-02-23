@@ -163,7 +163,7 @@ footer {
   /* font-family: "YESMyoungjo-Regular", sans-serif; */
 }
 .ant-btn-primary {
-  background-color: #0088ff !important;
+  background-color: #1c74e9 !important;
 }
 .test-subtitle {
   font-size: 18px;
@@ -497,4 +497,27 @@ a.gflag:hover {
 }
 .ant-space-vertical {
   padding: 0 10px;
+}
+.search-list-item-wrap {
+  margin-top: -2px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.search-list-item {
+  padding: 10px;
+  display: flex;
+  color: #111 !important;
+}
+.search-list-item:hover {
+  background-color: #f0f0f0;
+}
+.search-list-item-img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.search-list-item-title {
+  padding-top: 4px;
+  padding-left: 8px;
+  font-weight: bold;
 }

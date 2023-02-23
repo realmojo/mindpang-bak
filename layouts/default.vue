@@ -15,14 +15,35 @@
       </a-button>
     </div>
     <div v-if="isSearch" class="search-layout">
-      <a-input-search
+      <a-input
         class="w-full"
         placeholder="찾고 싶은 테스트를 검색해주세요."
-        @search="doKeywordSearch"
         size="large"
         v-model:value="searchText"
       />
     </div>
+    <ul v-if="isSearchList && searchItems.length" class="search-list-item-wrap">
+      <li v-for="(item, index) in searchItems" :key="index">
+        <a
+          :href="`/${item.category}/${item.link}`"
+          target="_self"
+          class="search-list-item"
+        >
+          <div class="flex">
+            <div>
+              <nuxt-img
+                class="search-list-item-img"
+                :alt="item.title"
+                :src="item.logo"
+                width="30"
+                height="30"
+              />
+            </div>
+            <div class="search-list-item-title">{{ item.title }}</div>
+          </div>
+        </a>
+      </li>
+    </ul>
     <div class="mindpang-menu-wrap">
       <ul class="mindpang-menu">
         <li v-for="menu in menuItems" :key="menu.key">
@@ -55,6 +76,8 @@ const category = computed(() => {
 });
 const isSearch = ref(false);
 const searchText = ref("");
+const isSearchList = ref(false);
+const searchItems = ref([]);
 const menuItems = ref([
   {
     title: "전체",
@@ -92,12 +115,36 @@ const getRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const doKeywordSearch = () => {
-  location.href = `/?search=${searchText.value}`;
+const debounce = (func, limit) => {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(this, args);
+    }, limit);
+  };
 };
+
+watch(
+  searchText,
+  debounce(async (newSearchText) => {
+    if (newSearchText) {
+      const url = `${runtimeConfig.BASE_URL}/mind/search.php?search=${newSearchText}`;
+      const { data } = await useFetch(url, {
+        key: "main",
+        method: "get",
+      });
+      const d = JSON.parse(data._rawValue);
+      searchItems.value = d.items;
+    } else {
+      searchItems.value = [];
+    }
+  }, 300)
+);
 
 const doSearch = () => {
   isSearch.value = !isSearch.value;
+  isSearchList.value = !isSearchList.value;
 };
 
 const doRandomStart = async () => {
