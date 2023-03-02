@@ -392,7 +392,9 @@ input[type="radio"]:checked {
 }
 
 .category-sidebar-text {
-  color: #c58940;
+  color: #bdbdbd;
+  font-size: 10px;
+  padding-left: 4px;
 }
 .category-sidebar-title {
   color: rgba(1, 1, 1, 1);
@@ -404,6 +406,8 @@ input[type="radio"]:checked {
 .ant-list-item {
   padding-inline: 0px !important;
   padding: 0px !important;
+  justify-content: flex-start !important;
+  margin-left: 12px;
 }
 .ant-list-item > a {
   padding: 12px;

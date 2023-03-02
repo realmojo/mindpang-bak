@@ -3,13 +3,19 @@
     <a-divider orientation="left"><strong>최신 테스트</strong></a-divider>
     <a-list item-layout="horizontal" :data-source="recentlyItems" bordered>
       <template #renderItem="{ item }">
-        <a-list-item
-          ><a :href="`/${item.category}/${item.link}`">
-            <span className="category-sidebar-text">
-              [{{ convertCategory(item.category) }}]
-            </span>
+        <a-list-item>
+          <nuxt-img
+            class="search-list-item-img"
+            :alt="item.title"
+            :src="item.logo"
+            width="30"
+            height="30"
+          /><a :href="`/${item.category}/${item.link}`">
             <span className="category-sidebar-title">
               {{ item.title }}
+            </span>
+            <span className="category-sidebar-text">
+              {{ convertCategory(item.category) }}
             </span></a
           ></a-list-item
         >
@@ -21,12 +27,20 @@
     >
     <a-list item-layout="horizontal" :data-source="popularItems" bordered>
       <template #renderItem="{ item }">
-        <a-list-item
-          ><a :href="`/${item.category}/${item.link}`">
-            <span className="category-sidebar-text">
-              [{{ convertCategory(item.category) }}]
+        <a-list-item>
+          <nuxt-img
+            class="search-list-item-img"
+            :alt="item.title"
+            :src="item.logo"
+            width="30"
+            height="30"
+          /><a :href="`/${item.category}/${item.link}`">
+            <span className="category-sidebar-title">
+              {{ item.title }}
             </span>
-            <span className="category-sidebar-title"> {{ item.title }}</span></a
+            <span className="category-sidebar-text">
+              {{ convertCategory(item.category) }}
+            </span></a
           ></a-list-item
         >
       </template>
