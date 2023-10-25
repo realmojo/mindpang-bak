@@ -12,7 +12,7 @@ const replaceAll = (str, searchStr, replaceStr) => {
 
 (async () => {
   const { data } = await axios.get(
-    "https://f5game.co.kr/api/test/getTests.php"
+    "https://mindpang.f5game.co.kr/api/test/getTests.php"
   );
   const pagesSitemap = `${data.map((item) => {
     return `<url>

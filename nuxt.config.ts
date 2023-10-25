@@ -6,7 +6,7 @@ const logo =
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      BASE_URL: "https://f5game.co.kr/api",
+      BASE_URL: "https://mindpang.f5game.co.kr/api",
     },
   },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/image-edge"],
