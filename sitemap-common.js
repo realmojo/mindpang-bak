@@ -19,10 +19,6 @@ const replaceAll = (str, searchStr, replaceStr) => {
             <loc>${DOMAIN}/${item.category}/${encodeURI(item.link)}</loc>
             <lastmod>${item.regdate.substring(0, 10)}</lastmod>
           </url>
-          <url>
-            <loc>${DOMAIN}/${item.category}/${encodeURI(item.link)}/play</loc>
-            <lastmod>${item.regdate.substring(0, 10)}</lastmod>
-          </url>
           `;
   })}`;
 

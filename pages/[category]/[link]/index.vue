@@ -23,7 +23,7 @@
               <div class="mb-2 name-input">
                 <a-input
                   size="large"
-                  placeholder="이름 혹은 별칭을 입력해주세요."
+                  placeholder="이름 혹은 별칭을 입력해주세요(선택)"
                   v-model:value="userName"
                 />
               </div>
@@ -31,7 +31,7 @@
               <div class="text-center pt-2">
                 <a :href="`/${item.category}/${item.link}/play`" target="_self">
                   <a-button type="primary" class="btn-start" size="large">
-                    시작하기
+                    START
                   </a-button>
                 </a>
               </div>
